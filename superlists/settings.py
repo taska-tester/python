@@ -25,7 +25,7 @@ SECRET_KEY = '*dbq6ojt4288vm*su43k4#_^en-of)donif--a#0k72+ym2@0_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jasonpythontddbook.azurewebsites.net', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['40.127.78.174', '127.0.0.1', 'localhost', 'superlist-staging.jason-lai.tk']
 
 
 # Application definition
