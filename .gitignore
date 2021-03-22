@@ -8,3 +8,4 @@ git
 .venv
 .azure
 Azure.pem
+.env
