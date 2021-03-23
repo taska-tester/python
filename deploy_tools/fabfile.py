@@ -5,6 +5,7 @@ from fabric.api import cd, env, local, run
 REPO_URL = 'https://github.com/taska-tester/python.git'
 
 def deploy():
+	run('ssh -i Azure.pem azureuser@40.127.78.174')
 	site_folder = f'/home/{env.user}/sites/{env.host}'
 	run(f'mkdir -p {site_folder}')
 	with cd(site_folder):
