@@ -7,7 +7,7 @@ User=azureuser
 WorkingDirectory=/home/azureuser/sites/DOMAIN
 EnvironmentFile=/home/azureuser/sites/DOMAIN/.env
 
-ExecStart=azureuser/sites/DOMAIN/virtualenv/bin/gunicorn \
+ExecStart=/home/azureuser/sites/DOMAIN/virtualenv/bin/gunicorn \
 	--bind unix:/tmp/DOMAIN.socket \
 	superlists.wsgi:application
 
