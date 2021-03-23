@@ -3,7 +3,7 @@ Description=Gunicorn server for DOMAIN
 
 [Service]
 Restart=on-failure
-User=azureuser
+User=jason
 WorkingDirectory=/home/jason/sites/DOMAIN
 EnvironmentFile=/home/jason/sites/DOMAIN/.env
 
