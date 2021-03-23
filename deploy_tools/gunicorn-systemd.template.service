@@ -3,11 +3,11 @@ Description=Gunicorn server for DOMAIN
 
 [Service]
 Restart=on-failure
-User=jason
-WorkingDirectory=/home/jason/sites/DOMAIN
-EnvironmentFile=/home/jason/sites/DOMAIN/.env
+User=azureuser
+WorkingDirectory=/home/azureuser/sites/DOMAIN
+EnvironmentFile=/home/azureuser/sites/DOMAIN/.env
 
-ExecStart=jason/sites/DOMAIN/virtualenv/bin/gunicorn \
+ExecStart=azureuser/sites/DOMAIN/virtualenv/bin/gunicorn \
 	--bind unix:/tmp/DOMAIN.socket \
 	superlists.wsgi:application
 
