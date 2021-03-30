@@ -7,8 +7,10 @@ from unittest import skip
 
 from lists.models import Item, List
 from lists.views import home_page
-from lists.forms import ItemForm, EMPTY_ITEM_ERROR
-
+from lists.forms import (
+    ItemForm, EMPTY_ITEM_ERROR,
+    DUPLICATE_ITEM_ERROR, ExistingListItemForm
+)
 class HomePageTest(TestCase):
 
     def test_uses_home_template(self):
@@ -107,6 +109,7 @@ class ListViewTest(TestCase):
             f'/lists/{list1.id}/',
             data={'text': 'textey'}
         )
+        expected_error = escape(DUPLICATE_ITEM_ERROR)
 
         expected_error=escape("You've already got this in your list")
         self.assertContains(response, expected_error)
