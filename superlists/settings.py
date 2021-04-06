@@ -27,11 +27,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
 else:
     DEGUB = True
     SECRET_KEY = 'insecure-key-for-dev'
-    ALLOWED_HOSTS = []
-
-# local host script
-# SECRET_KEY = 'insecure-key-for-dev'
-# ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -43,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
+    'accounts'
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
