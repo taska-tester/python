@@ -64,6 +64,8 @@ class LoginViewTest(TestCase):
 
     def test_calls_authenticate_with_uid_from_get_request(self, mock_auth):
         self.client.get('/accounts/login?token=abcd123')
+        # print(call(uid='abcd123'))
+        # print(mock_auth.authenticate.call_args)
         self.assertEqual(
             mock_auth.authenticate.call_args,
             call(uid='abcd123')
@@ -71,6 +73,9 @@ class LoginViewTest(TestCase):
 
     def test_calls_auth_login_with_user_if_there_is_one(self, mock_auth):
         response = self.client.get('/accounts/login?token=abcd123')
+        # print(mock_auth.login.call_args) # call(<WSGIRequest: GET '/accounts/login?token=abcd123'>, <MagicMock name='auth.authenticate()' id='4511231424'>)
+        # print(mock_auth.authenticate.return_value) # <MagicMock name='auth.authenticate()' id='4359384512'>
+        # print(response.wsgi_request) # <WSGIRequest: GET '/accounts/login?token=abcd123'>
         self.assertEqual(
             mock_auth.login.call_args,
             call(response.wsgi_request, mock_auth.authenticate.return_value)
