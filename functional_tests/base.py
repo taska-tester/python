@@ -49,3 +49,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         lambda: self.browser.find_element_by_name('email')
         navbar = self.browser.find_element_by_css_selector('.navbar')
         self.assertNotIn(email, navbar.text)
+
+    @wait
+    def wait_for(self, fn):
+        return fn()
