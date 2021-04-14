@@ -10,3 +10,4 @@ git
 Azure.pem
 .env
 functional_tests/screendumps
+node_modules/
