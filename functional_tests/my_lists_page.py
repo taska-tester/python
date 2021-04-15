@@ -3,7 +3,6 @@ class MyListsPage(object):
     def __init__(self, test):
         self.test = test
 
-
     def go_to_my_lists_page(self):
         self.test.browser.get(self.test.live_server_url)
         self.test.browser.find_element_by_link_text('My lists').click()
